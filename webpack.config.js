@@ -1,13 +1,9 @@
 const path = require('path');
-const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
-  mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
-  entry: slsw.lib.entries,
-  devtool: slsw.lib.webpack.isLocal ? 'eval-cheap-module-source-map' : 'source-map',
+  entry: './handler.ts',
+  devtool: 'source-map',
   resolve: {
     extensions: ['.mjs', '.json', '.ts'],
     symlinks: false,
@@ -15,8 +11,8 @@ module.exports = {
   },
   output: {
     libraryTarget: 'commonjs',
-    path: path.join(__dirname, '.webpack'),
-    filename: '[name].js',
+    path: __dirname,
+    filename: 'handler.js',
   },
   optimization: {
     concatenateModules: false,
