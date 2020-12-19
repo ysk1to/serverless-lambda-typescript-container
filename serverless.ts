@@ -3,14 +3,6 @@ import type { AWS } from '@serverless/typescript';
 const serverlessConfiguration: AWS = {
   service: 'hoge',
   frameworkVersion: '2',
-  custom: {
-    webpack: {
-      webpackConfig: './webpack.config.js',
-      includeModules: true
-    }
-  },
-  // Add the serverless-webpack plugin
-  plugins: ['serverless-webpack'],
   provider: {
     name: 'aws',
     runtime: 'nodejs12.x',
@@ -23,15 +15,7 @@ const serverlessConfiguration: AWS = {
   },
   functions: {
     hello: {
-      handler: 'handler.hello',
-      events: [
-        {
-          http: {
-            method: 'get',
-            path: 'hello',
-          }
-        }
-      ]
+      image: 'xxx'
     }
   }
 }
