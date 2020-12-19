@@ -1,0 +1,1 @@
+# serverless-lambda-typescript-container
