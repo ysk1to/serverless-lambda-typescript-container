@@ -1,1 +1,1 @@
-# serverless-lambda-container
+# serverless-lambda-typescript-container
